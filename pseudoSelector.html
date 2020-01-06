@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hover+Before+Selection</title>
+    <style>
+      button{
+        background-color: green;
+        height: 50px;
+        width: 200px;
+      }
+      button:hover{
+          background-color: yellow;
+      }
+      a::before{
+        content: "\1F60E Click here \21d2";
+        color: red;
+      }
+      p::selection{
+        color: red;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button>Click me!</button>
+    </div>
+
+    <div>
+      <ul>
+        <li><a href="#">First Link</a></li>
+        <li><a href="#">Second Link</a></li>
+        <li><a href="#">Third Link</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p>Testing selection selector.</p>
+    </div>
+  </body>
+</html>
