@@ -1,0 +1,15 @@
+SQL injection:
+  SELECT * FROM users WHERE (username = 'hacker') AND (password='1' OR '1'='1');
+
+Race Conditions:
+  two users try to modify or access a database at the same time,
+  and SQL commands get executed in an unexpected order.
+
+  Example:
+    SELECT balance FROM bank WHERE user_id = 1;
+    UPDATE bank SET balance = balance - 100 WHERE user_id = 1;
+
+  Solution: Use Transaction (lock the database when running a transaction)
+    BEGIN;
+    /* SQL commands */
+    COMMIT;
